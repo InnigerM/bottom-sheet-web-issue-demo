@@ -4,7 +4,7 @@ import { HelloWave } from "@/components/HelloWave";
 import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
-import BottomSheet from "@gorhom/bottom-sheet";
+import BottomSheet, { BottomSheetView } from "@gorhom/bottom-sheet";
 
 export default function HomeScreen() {
   return (
@@ -59,11 +59,13 @@ export default function HomeScreen() {
         index={-1}
         snapPoints={[Platform.select({ web: "40%", default: "10%" })]}
       >
-        <ThemedText type="subtitle">Bottom Sheet</ThemedText>
-        <ThemedText>
-          This is a bottom sheet. You can use it to display additional
-          information or actions.
-        </ThemedText>
+        <BottomSheetView>
+          <ThemedText type="subtitle">Bottom Sheet</ThemedText>
+          <ThemedText>
+            This is a bottom sheet. You can use it to display additional
+            information or actions.
+          </ThemedText>
+        </BottomSheetView>
       </BottomSheet>
     </>
   );
